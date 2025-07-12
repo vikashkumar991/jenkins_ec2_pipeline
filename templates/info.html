@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>About Me</h2>
+    <p>{{ data.about }}</p>
+    
+    <h3 class="mt-4">Experience</h3>
+    <div class="list-group">
+        {% for exp in data.experience %}
+        <div class="list-group-item">
+            <h5>{{ exp.role }}</h5>
+            <h6>{{ exp.company }} ({{ exp.duration }})</h6>
+            <p>{{ exp.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

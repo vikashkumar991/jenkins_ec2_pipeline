@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Professional Profile</h2>
+            <p>As a DevOps Engineer, I specialize in bridging the gap between development and operations to deliver high-quality software efficiently.</p>
+            
+            <h3 class="mt-4">Projects</h3>
+            <div class="card-group">
+                {% for project in data.projects %}
+                <div class="card m-2">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ project.name }}</h5>
+                        <p class="card-text">{{ project.description }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Technical Skills</h5>
+                    <ul class="list-group list-group-flush">
+                        {% for skill in data.skills %}
+                        <li class="list-group-item">{{ skill }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
